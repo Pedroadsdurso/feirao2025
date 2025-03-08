@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Carta de Quitação</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Carta de Quitação</h1>
+        <p>Na qualidade de Serasa, com base na prestação de serviços realizados ao Sr./Sra. <span id="nome"></span>, portador(a) do CPF <span id="cpf"></span>, informamos que:</p>
+        <ul>
+            <li>O serviço será realizado com base no programa do Feirão Limpa Nome, onde o(a) mesmo(a) obteve um desconto de 98,7% na quitação de todos os débitos em aberto.</li>
+        </ul>
+        <h2>Detalhes da dívida</h2>
+        <ul>
+            <li>Acordo: Gerido e processado pela Serasa.</li>
+            <li>Valor total: R$ <span id="taxa"></span>.</li>
+            <li>Forma de pagamento: PIX.</li>
+            <li>Acordo valido somente hoje: <span id="data-pagamento"></span></li>
+        </ul>
+        <p>Agora, depois que a Serasa Experian recebeu o pagamento devido, em conformidade com o acima referenciado de forma de pagamento, declaro aqui a quitação completa e absoluta da dívida.</p>
+        <p>[Bianca Soarez]<br>[Encarregada de Negociações]<br>Serasa Experian</p>
+        <p class="copyright">© 2025 Serasa Experian. Todos os direitos reservados.</p>
+    </div>
+    
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const nome = params.get('nome');
+    const cpf = params.get('cpf');
+    const taxa = params.get('taxa');
+    const datahoje = params.get('datahoje');
+    
+    document.getElementById('nome').textContent = nome;
+    document.getElementById('cpf').textContent = cpf;
+    document.getElementById('taxa').textContent = taxa;
+    document.getElementById('data-pagamento').textContent = datahoje;
+    </script>
+
+
+</body></html>
