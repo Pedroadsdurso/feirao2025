@@ -1591,23 +1591,7 @@
 										var errorMessage = document.querySelector('.validation-message.error-message');
 										var submitButton = document.getElementById('sendbtn');
 
-										// Aplica a máscara
-										if (cpfInput.length <= 11) {
-											cpfInput = cpfInput.replace(/(\d{3})(\d{1,3})?(\d{1,3})?(\d{1,2})?/, function (match, p1, p2, p3, p4) {
-												var maskedCpf = p1;
-												if (p2) {
-													maskedCpf += '.' + p2;
-												}
-												if (p3) {
-													maskedCpf += '.' + p3;
-												}
-												if (p4) {
-													maskedCpf += '-' + p4;
-												}
-												return maskedCpf;
-											});
-											event.target.value = cpfInput;
-										}
+										
 
 										if (isValidCPF(cpfInput)) {
 											successMessage.style.display = 'block'; // Exibe mensagem de sucesso
